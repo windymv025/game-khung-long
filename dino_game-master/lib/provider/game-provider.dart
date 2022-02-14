@@ -50,16 +50,22 @@ class GameProvider {
   }
 
   getPrize(score) {
-    if (score < 200 && prizeList.length > 0 && prizeList.contains('🍎')) {
-      var index = prizeList.indexOf('🍎');
+    if (score > 500 && prizeList.length > 0 && prizeList.contains('🍉')) {
+      var index = prizeList.indexOf('🍉');
       prizeList.removeAt(index);
-      return '🍎';
-    } else if (score < 300 &&
+      return '🍉';
+    } else if (score > 300 &&
         prizeList.length > 0 &&
         prizeList.contains('🍊')) {
       var index = prizeList.indexOf('🍊');
       prizeList.removeAt(index);
       return '🍊';
+    } else if (score > 200 &&
+        prizeList.length > 0 &&
+        prizeList.contains('🍎')) {
+      var index = prizeList.indexOf('🍎');
+      prizeList.removeAt(index);
+      return '🍎';
     } else {
       return prizeList[Random().nextInt(prizeList.length)];
     }
